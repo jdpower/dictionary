@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "dictionary",
+    "version": "1.0",
+    "description": "Select and get dictionay meaning of the word",
+    "homepage_url": "https://github.com/",
+    "applications": {
+        "gecko": {
+            "id": "dictionary@moolah.com"
+        }
+    },
+    "permissions": ["activeTab", "contextMenus", "menus"],
+    "icons": {
+        "48": "icons/dictionary-48.png",
+        "96": "icons/dictionary-96.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "48": "icons/dictionary-48.png"
+        },
+        "default_title": "Select and get dictionay meaning of the word",
+        "default_popup": "popup/popup.html"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [ {
+        "matches": ["*://*/*"],
+        "js": ["content.js"]
+    }]
+}
